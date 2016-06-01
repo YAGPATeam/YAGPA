@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="yagpa">
     <head>
         <title>YAGPA</title>
     </head>
 
-    <body>
+    <body ng-controller="baseCtrl">
     {% block content %}
-        Coucou !<br /><br /><br />
         {% block form %}{% endblock form %}
     {% endblock content %}
     </body>
+    
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static 'scripts/angular.js' %}"></script>
+    <script type="text/javascript" src="{% static 'djng/js/django-angular.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/controllers.js' %}"></script>
 </html>
