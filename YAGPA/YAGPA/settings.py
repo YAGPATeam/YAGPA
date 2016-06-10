@@ -100,7 +100,6 @@ STATIC_ROOT = '/var/static/angular-example/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'management/static')
 ]
 
 TEMPLATES = [

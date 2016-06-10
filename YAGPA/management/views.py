@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
+from django.http.response import HttpResponse
+
 from django.views.generic import View
 
+import xml.etree.cElementTree as ET
+
 from .forms import f_new
-from django.http.response import HttpResponse
 
 class new_tournament(View):
     
@@ -17,7 +20,9 @@ class new_tournament(View):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            # <process form cleaned data>
+            
+            
+            
             return HttpResponse('OK')
 
         return render(request, self.template_name, {'form': form})
