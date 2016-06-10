@@ -11,11 +11,11 @@ from .forms import f_new
 class new_tournament(View):
     
     form_class = f_new
-    template_name = 'form.html'
+    template_name = 'form_new_tournament.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form_new_tournament': form})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -25,4 +25,4 @@ class new_tournament(View):
             
             return HttpResponse('OK')
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form_new_tournament': form})
