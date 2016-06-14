@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/origin/master
 <!DOCTYPE html>
 <html ng-app="yagpa">
     <head>
@@ -26,4 +27,35 @@
 	<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/controllers.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/services.js' %}"></script>
+=======
+{% load djng_tags %}
+<!DOCTYPE html>
+<html ng-app="yagpa">
+    <head>
+        <title>YAGPA</title>
+    </head>
+
+    <body ng-controller="baseCtrl">
+    {# Load the tag library #}
+	{% load bootstrap3 %}
+	
+	{# Load CSS and JavaScript #}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	
+	{# Display django.contrib.messages as Bootstrap alerts #}
+	{% bootstrap_messages %}
+    
+    {% block content %}
+        {% block form %}{% endblock form %}
+    {% endblock content %}
+    </body>
+    
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static 'scripts/angular.js' %}"></script>
+    <script type="text/javascript" src="{% static 'djng/js/django-angular.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/controllers.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/services.js' %}"></script>
+>>>>>>> ok
 </html>

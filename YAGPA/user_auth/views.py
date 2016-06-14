@@ -29,7 +29,7 @@ class user_login(View):
                 login(request, user)
                 return HttpResponse('OK')
             else:
-                return HttpResponse('Invalid user')
+                return HttpResponse('Account is inactive or has been deleted')
             
         return HttpResponse('Invalid form')
         return render(request, self.template_name, {'form': form})
