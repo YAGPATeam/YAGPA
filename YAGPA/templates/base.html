@@ -5,6 +5,16 @@
     </head>
 
     <body ng-controller="baseCtrl">
+    {# Load the tag library #}
+	{% load bootstrap3 %}
+	
+	{# Load CSS and JavaScript #}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	
+	{# Display django.contrib.messages as Bootstrap alerts #}
+	{% bootstrap_messages %}
+    
     {% block content %}
         {% block form %}{% endblock form %}
     {% endblock content %}
@@ -15,4 +25,5 @@
     <script type="text/javascript" src="{% static 'djng/js/django-angular.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/controllers.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/services.js' %}"></script>
 </html>
