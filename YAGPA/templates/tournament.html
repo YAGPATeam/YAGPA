@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block tournament %}
+<nav id="tournament_menu">
+    <a href="tournament/{{id}}/player_manager/">Player manager</a>
+</nav>
+{% endblock tournament %}
