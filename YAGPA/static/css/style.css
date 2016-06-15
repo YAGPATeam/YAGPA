@@ -1,0 +1,16 @@
+ul.djng-field-errors {
+        margin-left: 0;
+        /*display: inline-block;*/
+        float:right;
+        list-style-type: none;
+}
+ul.djng-field-errors li.invalid {
+        color: #e9322d;
+}
+ul.djng-field-errors li.invalid:before {
+        content: "\2716\20";  /* adds a red cross before the error message */
+}
+ul.djng-field-errors li.valid:before {
+        color: #00c900;
+        content: "\2714";  /* adds a green tick */
+}

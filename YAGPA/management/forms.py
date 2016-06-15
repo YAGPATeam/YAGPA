@@ -9,6 +9,7 @@ from django.utils import six
 from djng.forms import NgDeclarativeFieldsMetaclass, NgFormValidationMixin
 
 class f_new(six.with_metaclass(NgDeclarativeFieldsMetaclass, NgFormValidationMixin, forms.Form)):
+    form_name = 'f_new'
     name = forms.CharField(label="name", max_length=255)
     shortname = forms.CharField(label="short name", max_length=50)
     location = forms.CharField(label="location", max_length=255)

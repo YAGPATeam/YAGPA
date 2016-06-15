@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block form %}
-    <form action="/auth/login/" method="post">
+    <form name="{{ form.form_name }} action="/auth/login/" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit" />
