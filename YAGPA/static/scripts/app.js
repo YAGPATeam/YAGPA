@@ -1,4 +1,4 @@
-var yagpa = angular.module('yagpa', ['djng.forms']).config(function($httpProvider) { //, ['ngRoute']
+var yagpa = angular.module('yagpa', ['djng.forms', 'ngCookies']).config(function($httpProvider) { //, ['ngRoute']
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 

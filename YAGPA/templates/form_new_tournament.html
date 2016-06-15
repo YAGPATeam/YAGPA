@@ -11,7 +11,7 @@
 	{# Display django.contrib.messages as Bootstrap alerts #}
 	{% bootstrap_messages %}
 
-    <form action="/management/new/" method="post" class="form-inline">
+    <form action="/management/new/" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
