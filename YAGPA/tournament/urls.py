@@ -13,5 +13,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^(?P<tournament_id>[0-9]{3})/player_manager/', views.player_manager.as_view(), name='player manager'),    
+    url(r'^(?P<tournament_id>[0-9]{3})/player_manager/', views.player_manager.as_view(), name='player_manager'),    
 ]
