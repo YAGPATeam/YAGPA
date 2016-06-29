@@ -14,3 +14,7 @@ ul.djng-field-errors li.valid:before {
         color: #00c900;
         content: "\2714";  /* adds a green tick */
 }
+
+ul.navbar-right li{
+	float: left;
+}

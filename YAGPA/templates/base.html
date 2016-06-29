@@ -24,6 +24,12 @@
 				 <ul class="nav navbar-nav">
 					<li><a href="#">My Tournaments</a></li>
 				 </ul>
+				 {% if not user.is_authenticated %}
+				    <ul class="nav navbar-right">
+					    <li><a href="{% url 'login' %}">Login</a></li>
+	                    <li><a href="{% url 'register' %}">Register</a></li>
+                    </ul>
+				 {% endif %}
 				 <form class="navbar-form navbar-right" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search">

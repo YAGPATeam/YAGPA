@@ -16,3 +16,4 @@ class f_login(six.with_metaclass(NgDeclarativeFieldsMetaclass, NgFormValidationM
 class f_register(NgModelFormMixin, NgForm):
     user_name = forms.CharField(label="user name", max_length=255)
     user_email = forms.EmailField(label="email")
+    password = forms.PasswordInput("password")

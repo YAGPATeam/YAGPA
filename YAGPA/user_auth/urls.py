@@ -3,10 +3,11 @@ Created on 10 juin 2016
 
 @author: kicyfroth
 '''
-from django.conf.urls import url
+from django.conf.urls import url, include
 
 from . import views
 
 urlpatterns = [
-    url(r'^login/', views.user_login.as_view(), name='login'),    
+    url('^', include('django.contrib.auth.urls')),
+    url(r'^register/$', views.register, name='register'),
 ]
