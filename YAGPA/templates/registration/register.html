@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block form %}
+
+    {% if form.errors %}
+       <p>An error occurred. Please try again.</p>
+    {% endif %}
+    
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+        {% else %}
+           <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+    
+    <form method="post" action="{% url 'register' %}">
+       {% csrf_token %}
+       {{form.as_p }}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary" ng-click="submit($event)">
+                {% bootstrap_icon "star" %} Register
+            </button>
+        {% endbuttons %}
+       <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+{% endblock %}

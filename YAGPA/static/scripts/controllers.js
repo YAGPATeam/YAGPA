@@ -28,31 +28,6 @@ yagpa.controller('formNewTournamentCtrl', ['$scope', '$http', '$cookies', functi
 	};
 }]);
 
-yagpa.controller('formNewTournamentCtrl', ['$scope', '$http', function($scope, $http) {
-	$scope.submit = function ($event) {
-        $event.preventDefault();
-        
-        var in_data = 'name=' + $scope.name + 
-        	'&shortname=' + $scope.shortname +
-        	'&location=' + $scope.location +
-        	'&director=' + $scope.director +
-        	'&begin_date=' + $scope.begin_date +
-        	'&end_date=' + $scope.end_date +
-        	'&system=' + $scope.system +
-        	'&nb_rounds=' + $scope.nb_rounds;
-        
-        $http({
-            url: '/management/new/',
-            method: 'POST',
-            data: in_data
-        }).success(function (data, status, headers, config) {
-        	
-        }).error(function (data, status, header, config) {
-        	
-        });
-	};
-}]);
-
 yagpa.controller('formLoginCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.submit = function ($event) {
         $event.preventDefault();
