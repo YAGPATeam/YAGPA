@@ -31,7 +31,21 @@ yagpa.controller('formNewTournamentCtrl', ['$scope', '$http', '$cookies', functi
 yagpa.controller('formLoginCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.submit = function ($event) {
         $event.preventDefault();
+
+        var in_data = 'username=' + $scope.username + 
+        	'&password=' + $scope.password;
         
+        $http({
+            url: '/auth/login/',
+            method: 'POST',
+            data: in_data
+        }).success(function (data, status, headers, config) {
+        	scope.$apply(function() { 
+        		   $location.path("/management/my_tournaments/"); 
+        		});
+        }).error(function (data, status, header, config) {
+        	
+        });
         
 	};
 }]);
