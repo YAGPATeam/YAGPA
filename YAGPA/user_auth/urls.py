@@ -9,5 +9,5 @@ from . import views
 
 urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
-    url(r'^register/$', views.register, name='register'),
+    url(r'^register/$', views.register.as_view(), name='register'),
 ]

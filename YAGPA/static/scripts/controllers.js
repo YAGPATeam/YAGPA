@@ -40,9 +40,9 @@ yagpa.controller('formLoginCtrl', ['$scope', '$http', function($scope, $http) {
             method: 'POST',
             data: in_data
         }).success(function (data, status, headers, config) {
-        	scope.$apply(function() { 
+        	/*scope.$apply(function() { 
         		   $location.path("/management/my_tournaments/"); 
-        		});
+        		});*/
         }).error(function (data, status, header, config) {
         	
         });

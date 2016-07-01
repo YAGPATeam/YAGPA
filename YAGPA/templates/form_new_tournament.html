@@ -10,7 +10,7 @@
 	{# Display django.contrib.messages as Bootstrap alerts #}
 	{% bootstrap_messages %}
 
-    <form name="{{ form.form_name }}" action="/management/new/" method="post" class="form">
+    <form name="{{ form.form_name }}" action="/management/new/" method="post" class="form" ng-controller="formNewTournamentCtrl">
         {% csrf_token %}
         {{form.as_p }}
         {% buttons %}

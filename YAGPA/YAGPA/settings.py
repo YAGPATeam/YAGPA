@@ -122,3 +122,8 @@ TEMPLATES = [
         },
     },
 ]
+
+#Settings for auth system
+LOGIN_REDIRECT_URL = "/management/my_tournaments/"
+
+
