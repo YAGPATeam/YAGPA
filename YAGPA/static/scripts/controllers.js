@@ -1,7 +1,9 @@
-yagpa.controller('baseCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies) {
+yagpa.controller('baseCtrl', ['$scope', '$cookies', function($scope, $cookies) {
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-	$http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-	
+	$http.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
+}]);
+
+yagpa.controller('formNewTournamentCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies) {
 	$scope.submit = function ($event) {
         $event.preventDefault();
         
@@ -18,9 +20,44 @@ yagpa.controller('baseCtrl', ['$scope', '$http', '$cookies', function($scope, $h
             url: '/management/new/',
             method: 'POST',
             data: in_data
-        }).success(function(out_data) {
-            $scope.response = out_data;
+        }).success(function (data, status, headers, config) {
+        	
+        }).error(function (data, status, header, config) {
+        	
         });
+	};
+}]);
+
+yagpa.controller('formNewTournamentCtrl', ['$scope', '$http', function($scope, $http) {
+	$scope.submit = function ($event) {
+        $event.preventDefault();
+        
+        var in_data = 'name=' + $scope.name + 
+        	'&shortname=' + $scope.shortname +
+        	'&location=' + $scope.location +
+        	'&director=' + $scope.director +
+        	'&begin_date=' + $scope.begin_date +
+        	'&end_date=' + $scope.end_date +
+        	'&system=' + $scope.system +
+        	'&nb_rounds=' + $scope.nb_rounds;
+        
+        $http({
+            url: '/management/new/',
+            method: 'POST',
+            data: in_data
+        }).success(function (data, status, headers, config) {
+        	
+        }).error(function (data, status, header, config) {
+        	
+        });
+	};
+}]);
+
+yagpa.controller('formLoginCtrl', ['$scope', '$http', function($scope, $http) {
+	$scope.submit = function ($event) {
+        $event.preventDefault();
+        
+        
 	};
 }]);
 
